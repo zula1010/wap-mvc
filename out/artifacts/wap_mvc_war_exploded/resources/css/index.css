@@ -76,8 +76,8 @@ body {
 .column {
     float: left;
     width: 22%;
-    padding: 15px;
-    margin: 15px;
+    padding: 5px;
+    margin: 5px;
     border: 1px solid #ccc;
 }
 .column:hover {
@@ -150,4 +150,24 @@ body {
     .slider img {
         width: 100%;
     }
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+#tbl_products img{
+   width:20%;
+    height:20%;
+}
+#success{
+    text-align:center;
+    color:black;
+    font-size:30px;
 }

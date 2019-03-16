@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,113 +22,35 @@
 <body>
 <div class="header">WORLDWIDE SHIPPING, FREE SHIPPING OVER $50</div>
 <div class="topnav">
-    <a href="#" id="logo"><img src="resources/images/logo_new.svg"/></a>
-    <a href="#">Checkout</a>
-    <a href="#">Cart</a>
+    <a href="" id="logo"><img src="resources/images/logo_new.svg"/></a>
+    <a href="login">Checkout</a>
+    <a href="">Cart : [${cart.getSize()}]</a>
 </div>
 <div class="slider">
     <img src="resources/images/jeans.jpg" alt="Jeans" />
 </div>
 <div class="row">
+    <c:forEach items="${products}" var="product">
     <div class="column">
         <a target="_blank" href="#">
-            <img src="resources/images/jeans1.jpg" alt="jeans1" />
+            <img src="<c:url value="${product.getPicturePath()}" />" alt="<c:out value="${product.getPicturePath()}" />" />
         </a>
-        <div class="desc">Jeans1</div>
+        <div class="desc"><c:out value="${product.getName()}" /></div>
         <div class="desc-row">
           <span class="desc-column">
-            Price: $30
+            Price: <c:out value="${product.getPrice()}" />
           </span>
-            <span class="desc-column"><button>Add to cart</button></span>
+            <span class="desc-column">
+                <form action="product" method="post">
+                    <input name="productId" value="${product.getId()}" style="visibility: hidden"/>
+                    <input type="submit" value ="Add to cart" />
+                </form>
+            </span>
         </div>
     </div>
-    <div class="column">
-        <a target="_blank" href="#">
-            <img src="resources/images/jeans2.jpg" alt="jeans1" />
-        </a>
-        <div class="desc">Jeans1</div>
-        <div class="desc-row">
-          <span class="desc-column">
-            Price: $30
-          </span>
-            <span class="desc-column"><button>Add to cart</button></span>
-        </div>
-    </div>
-    <div class="column">
-        <a target="_blank" href="#">
-            <img src="resources/images/jeans3.jpg" alt="jeans1" />
-        </a>
-        <div class="desc">Jeans1</div>
-        <div class="desc-row">
-          <span class="desc-column">
-            Price: $30
-          </span>
-            <span class="desc-column"><button>Add to cart</button></span>
-        </div>
-    </div>
-    <div class="column">
-        <a target="_blank" href="#">
-            <img src="resources/images/jeans4.jpg" alt="jeans1" />
-        </a>
-        <div class="desc">Jeans1</div>
-        <div class="desc-row">
-          <span class="desc-column">
-            Price: $30
-          </span>
-            <span class="desc-column"><button>Add to cart</button></span>
-        </div>
-    </div>
+    </c:forEach>
 </div>
-<div class="row">
-    <div class="column">
-        <a target="_blank" href="#">
-            <img src="resources/images/jeans5.jpg" alt="jeans1" />
-        </a>
-        <div class="desc">Jeans1</div>
-        <div class="desc-row">
-          <span class="desc-column">
-            Price: $30
-          </span>
-            <span class="desc-column"><button>Add to cart</button></span>
-        </div>
-    </div>
-    <div class="column">
-        <a target="_blank" href="#">
-            <img src="resources/images/jeans6.jpg" alt="jeans1" />
-        </a>
-        <div class="desc">Jeans1</div>
-        <div class="desc-row">
-          <span class="desc-column">
-            Price: $30
-          </span>
-            <span class="desc-column"><button>Add to cart</button></span>
-        </div>
-    </div>
-    <div class="column">
-        <a target="_blank" href="#">
-            <img src="resources/images/jeans7.jpg" alt="jeans1" />
-        </a>
-        <div class="desc">Jeans1</div>
-        <div class="desc-row">
-          <span class="desc-column">
-            Price: $30
-          </span>
-            <span class="desc-column"><button>Add to cart</button></span>
-        </div>
-    </div>
-    <div class="column">
-        <a target="_blank" href="#">
-            <img src="resources/images/jeans8.jpg" alt="jeans1" />
-        </a>
-        <div class="desc">Jeans1</div>
-        <div class="desc-row">
-          <span class="desc-column">
-            Price: $30
-          </span>
-            <span class="desc-column"><button>Add to cart</button></span>
-        </div>
-    </div>
-</div>
+
 <div class="footer">
     <h1>WANT MORE? OF COURSE YOU DO.</h1>
     <h3>
@@ -153,4 +75,3 @@
 </div>
 </body>
 </html>
-

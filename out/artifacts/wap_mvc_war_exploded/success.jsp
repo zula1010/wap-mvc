@@ -1,41 +1,34 @@
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <%--
   Created by IntelliJ IDEA.
   User: julia
-  Date: 2019-03-14
-  Time: 21:17
+  Date: 2019-03-13
+  Time: 20:59
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Login</title>
-    <link href="resources/css/index.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="resources/css/index.css" />
+    <!-- <script src="main.js"></script> -->
 </head>
 
 <body>
 <div class="header">WORLDWIDE SHIPPING, FREE SHIPPING OVER $50</div>
 <div class="topnav">
-    <a href="" id="logo"><img src="resources/images/logo_new.svg"/></a>
-    <a href="checkout">Checkout</a>
-    <a href="#">Cart</a>
+    <a href="#" id="logo"><img src="resources/images/logo_new.svg"/></a>
+    <a href="login">Checkout</a>
+    <a href="#">Cart : ["${cart.getSize()}"]</a>
 </div>
-<div class="row">
-    <div class="login">
-        <h3>RETURNING GUESTS:</h3>
-        <form acion="login" method="post">
-            Username: <input name="username" /><br />
-            Password: <input name="password" type="password" /><br />
-            <input type="submit" name="loginButton" value="Login" />
-        </form>
-    </div>
-
-    </div>
+<div id="success">
+    <h1>Thank you! Your order will be shipped soon!</h1>
 </div>
-
 <div class="footer">
     <h1>WANT MORE? OF COURSE YOU DO.</h1>
     <h3>

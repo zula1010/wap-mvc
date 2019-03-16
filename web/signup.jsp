@@ -20,19 +20,18 @@
 <div class="header">WORLDWIDE SHIPPING, FREE SHIPPING OVER $50</div>
 <div class="topnav">
     <a href="" id="logo"><img src="resources/images/logo_new.svg"/></a>
-    <a href="checkout">Checkout</a>
+    <a href="#">Checkout</a>
     <a href="#">Cart</a>
 </div>
 <div class="row">
-    <div class="login">
-        <h3>RETURNING GUESTS:</h3>
-        <form acion="login" method="post">
+
+    <div class="register">
+        <h3>DON'T HAVE AN ACCOUNT?</h3>
+        <form acion="register" method="post">
             Username: <input name="username" /><br />
             Password: <input name="password" type="password" /><br />
-            <input type="submit" name="loginButton" value="Login" />
+            <input type="submit" name="registerButton" value="Create Account" />
         </form>
-    </div>
-
     </div>
 </div>
 

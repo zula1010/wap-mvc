@@ -29,16 +29,10 @@
         <form acion="login" method="post">
             Username: <input name="username" /><br />
             Password: <input name="password" type="password" /><br />
-            <input type="button" name="loginButton" value="Login" />
+            <input type="submit" name="loginButton" value="Login" />
         </form>
     </div>
-    <div class="register">
-        <h3>DON'T HAVE AN ACCOUNT?</h3>
-        <form acion="register" method="post">
-            Username: <input name="username" /><br />
-            Password: <input name="password" type="password" /><br />
-            <input type="button" name="registerButton" value="Create Account" />
-        </form>
+
     </div>
 </div>
 
